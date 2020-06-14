@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h4>Custom sort array</h4>
+  <div id="result"></div>
+  <div id="resultstring"></div>
+  <div id="resultalpa"></div>
+</body>
+<script>
+  
+function goyang(array) {
+  var done = false;
+  while (!done) {
+    done = true;
+    for (var i = 1; i < array.length; i += 1) {
+      if (array[i - 1] > array[i]) {
+        done = false;
+        var tmp = array[i - 1];
+        array[i - 1] = array[i];
+        array[i] = tmp;
+      }
+    }
+  }
+
+  return array;
+}
+
+var numeric = [10,9,102,66,5421,1,0];
+var string = ["Wulan","Raharjo","Widya","Yuda","Cinta","Iskandar","Hidayat","Kusuma","Indah","Jusuf"];
+var Alphanumeric = ["Wulan","Raharjo","Widya",10,9,102,66,5421,1,0,"Yuda","Cinta","Iskandar","Hidayat","Kusuma","Indah","Jusuf"];
+
+goyang(numeric);
+goyang(string);
+goyang(Alphanumeric);
+document.getElementById('result').innerHTML=numeric;
+document.getElementById('resultstring').innerHTML=string;
+document.getElementById('resultalpa').innerHTML=Alphanumeric;
+</script>
+</html>

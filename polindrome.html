@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form id="formdata">
+    <input type="text" id="tekssaya" />
+    <button type="submit">cek data</button>
+</form>
+<div id="result"></div>
+</body>
+<script>
+	var isPalindrome = function (string) {
+    if (string == string.split('').reverse().join('')) {
+       document.write(string+`<html><body>
+       	<h2>
+			Ini baru polindrome
+       	</h2>
+       	</body></html>`);
+    }
+    else {
+      document.write(string+`<html><body>
+       	<h2 style="color:red">
+			Bukan Polindrome
+       	</h2>
+       	</body></html>`);
+    }
+}
+
+document.getElementById('formdata').onsubmit = function() {
+   isPalindrome(document.getElementById('tekssaya').value);
+    return false;
+}
+</script>
+</html>
